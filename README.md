@@ -20,3 +20,22 @@ O(M log K), donde M es la cantidad de productos que empiezan con el prefijo.
 javac -d bin src/*.java
 java -cp bin Main
 ```
+## Menú interactivo
+```
+javac -d bin src/*.java
+java -cp bin App
+```
+
+## Pruebas (JUnit)
+Las pruebas están en la carpeta `test/` (28 pruebas: MinHeap, Trie y ProductLoader).
+
+1. Descargar JUnit en `lib/`:
+```
+mkdir lib
+Invoke-WebRequest -Uri "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-console-standalone/1.11.4/junit-platform-console-standalone-1.11.4.jar" -OutFile "lib/junit-platform-console-standalone-1.11.4.jar"
+```
+2. Compilar y ejecutar:
+```
+javac -d bin -cp "lib/junit-platform-console-standalone-1.11.4.jar" src/*.java test/*.java
+java -jar lib/junit-platform-console-standalone-1.11.4.jar execute --class-path bin --scan-class-path
+```
